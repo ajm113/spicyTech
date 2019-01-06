@@ -29,6 +29,14 @@ namespace {
 
       glfwMakeContextCurrent(window);
 
+      int gladInitRes = gladLoadGL();
+      if (!gladInitRes) {
+         fprintf(stderr, "Unable to initialize glad\n");
+         glfwDestroyWindow(window);
+         glfwTerminate();
+         return nullptr;
+      }
+
       return window;
    }
 }
