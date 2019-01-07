@@ -1,7 +1,7 @@
 #include "system.hpp"
 
-bool spiceSystem::init() {
-	glfwSetErrorCallback(spiceSystem::errorCallback);
+bool spiceSystem::Init() {
+	glfwSetErrorCallback(spiceSystem::ErrorCallback);
 	// Initalize logger first and setup enviroment.
 	m_logger = new spiceLogger();
 
@@ -13,7 +13,7 @@ bool spiceSystem::init() {
 
 	// Setup GLFW init to render our window and context.
 	if (!glfwInit()) {
-		m_logger->Printf("Unable to initialize GLFW\n");
+		m_logger->Printf("Unable to initialize GLFW");
 		return false;
 	}
 
@@ -34,18 +34,18 @@ bool spiceSystem::init() {
 
 	// Create our OpenGL context to render.
 	if (!gladLoadGL()) {
-		m_logger->Printf("Unable to initialize glad\n");
+		m_logger->Printf("Unable to initialize glad");
 		glfwDestroyWindow(m_window);
 		glfwTerminate();
 		return false;
 	}
 
-	printGLDetails();
+	PrintGLDetails();
 
 	return true;
 }
 
-bool spiceSystem::run() {
+bool spiceSystem::Run() {
    // Set the clear color to a nice green
    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -63,11 +63,11 @@ bool spiceSystem::run() {
    return true;
 }
 
-void spiceSystem::errorCallback(int error, const char* description) {
+void spiceSystem::ErrorCallback(int error, const char* description) {
 	fprintf(stderr, "GLFW error %d: %s\n", error, description);
 }
 
-void spiceSystem::printGLDetails() {
+void spiceSystem::PrintGLDetails() {
 	m_logger->Printf("GL_RENDERER: %s", glGetString(GL_RENDERER));
 	m_logger->Printf("GL_EXTENSIONS: %s", glGetString(GL_EXTENSIONS));
 }

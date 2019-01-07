@@ -9,16 +9,16 @@
 
 class spiceSystem {
 public:
-	bool init();
-	bool run();
+	bool Init();
+	bool Run();
 
-	static void errorCallback(int error, const char* description);
+	static void ErrorCallback(int error, const char* description);
 protected:
 	GLFWwindow* m_window;
 	spiceLogger* m_logger;
 private:
 
-	void printGLDetails();
+	void PrintGLDetails();
 };
 
 

@@ -4,11 +4,11 @@
 int main(int argc, char* argv[]) {
 	// Create spicy engine.
 	spiceSystem* spice = new spiceSystem();
-	if(!spice->init()) {
+	if(!spice->Init()) {
 		return 1;
 	}
 
-	spice->run();
+	spice->Run();
 
 	return 0;
 }
