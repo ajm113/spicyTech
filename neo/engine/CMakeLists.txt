@@ -1,5 +1,8 @@
 
-set(SOURCES "${SRC_DIR}/engine/main.cpp")
+set(SOURCES "${SRC_DIR}/engine/main.cpp"
+  "${SRC_DIR}/engine/logger.cpp"
+  "${SRC_DIR}/engine/system.cpp"
+)
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}")
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
