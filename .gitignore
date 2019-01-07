@@ -1,3 +1,5 @@
+spicyTech
+*.a
 build
 *.pk4
 Makefile
