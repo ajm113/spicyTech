@@ -9,7 +9,7 @@ bool spiceSystem::init() {
 		return false;
 	}
 
-	m_logger->Printf("Starting game.");
+	m_logger->Printf("Starting %s (%s)...", GAME_TITLE, ENGINE_VERSION);
 
 	// Setup GLFW init to render our window and context.
 	if (!glfwInit()) {
